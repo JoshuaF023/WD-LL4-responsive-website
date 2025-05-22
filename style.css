@@ -1,0 +1,182 @@
+/* style.css - Simple mobile-first header styles for beginners */
+
+/* Basic reset for margin and padding */
+body, h1, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Use Google Fonts for easy-to-read font combo */
+body {
+  font-family: 'Montserrat', Arial, sans-serif; /* Headings: Montserrat, Body: Arial */
+  background-color: #f4fdf7; /* Soft green background */
+  color: #23424a; /* Dark blue-green text for readability */
+}
+
+/* Style the header background and padding */
+header {
+  background-color: #a8e6cf; /* Soft green */
+  padding: 16px 12px;
+  box-shadow: 0 2px 4px rgba(44, 130, 201, 0.05); /* Soft blue shadow */
+}
+
+/* Logo styles */
+.logo h1 {
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', Arial, sans-serif; /* Logo uses Montserrat */
+}
+
+/* Hamburger menu button styles (hidden on large screens) */
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #23424a;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Navigation styles */
+nav {
+  width: 100%;
+}
+nav ul {
+  list-style: none;
+  display: none; /* Hidden by default on mobile */
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  padding-left: 0;
+  background: #f47521;
+}
+nav ul.show {
+  display: flex; /* Show menu when toggled */
+}
+nav a {
+  text-decoration: none;
+  color: #23424a; /* Dark blue-green */
+  background: #d0f4ff; /* Soft blue */
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+nav a:hover {
+  background: #b2dfdb; /* Lighter green-blue on hover */
+  color: #388e7d; /* Slightly deeper green */
+}
+
+/* Login button (if used) */
+.login-btn a {
+  background: #388e7d; /* Deep green */
+  color: #fff;
+}
+.login-btn a:hover {
+  background: #a8e6cf;
+  color: #23424a;
+}
+
+/* Hero section styles */
+.hero {
+  height: 100vh; /* Full viewport height */
+  background-color: #d0f4ff; /* Soft blue background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-size: 2.2em;
+  color: #23424a; /* Dark blue-green */
+  margin-bottom: 16px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #388e7d; /* Soft green-blue */
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Card section styles */
+.card-section {
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  gap: 24px;
+  align-items: center;
+  padding: 32px 12px;
+  background: #f4fdf7; /* Soft green background */
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(44, 130, 201, 0.08);
+  padding: 20px;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  margin: 12px 0 8px 0;
+  color: #23424a;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.card p {
+  color: #388e7d;
+  font-size: 1em;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Desktop: align cards horizontally */
+@media (min-width: 800px) {
+  .card-section {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+  }
+}
+
+/* Responsive: On larger screens, show nav links in a row and hide hamburger */
+@media (min-width: 600px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  nav ul {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 0;
+    background: none;
+    width: auto;
+    justify-content: flex-end;
+  }
+}
